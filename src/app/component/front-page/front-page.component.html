@@ -3,221 +3,6 @@
 </div>
 
 
-
-<!-- <div class="container mt-5">
-  <table>
-    <thead>
-
-
-      <div class="row" *ngFor = "let contacts of contactList">
-        <div class="column">
-          <li id="{{ contacts.id }}" class="oneuser">
-            <div class="profileimage">
-              <img [src]="image" class="image">
-            </div>
-              <h3 class="usertitle">{{ contacts.name }}</h3>
-              <div class="infofield">
-                <div>
-                  <mat-icon class="icon">email </mat-icon>
-                </div>
-                <div class="icon-label">: {{ contacts.email }}</div>
-              </div>
-         
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">phone_enabled </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.phone }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">language </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.website }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="matcardact">
-              <button mat-icon-button class="favoritebutton">
-                <mat-icon>favorite_border </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="editbutton" (click)="open(edit)">
-                <mat-icon>drive_file_rename_outline </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="deletebutton" (click)="onDelete(user.id)">
-                <mat-icon>delete_forever </mat-icon>
-              </button>
-            </div>
-          </td>
-  
-        </li>
-        </div>
-        <div class="column">
-          <li id="{{ contacts.id }}" class="oneuser">
-            <div class="profileimage">
-              <img [src]="image" class="image">
-            </div>
-              <h3 class="usertitle">{{ contacts.name }}</h3>
-              <div class="infofield">
-                <div>
-                  <mat-icon class="icon">email </mat-icon>
-                </div>
-                <div class="icon-label">: {{ contacts.email }}</div>
-              </div>
-         
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">phone_enabled </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.phone }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">language </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.website }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="matcardact">
-              <button mat-icon-button class="favoritebutton">
-                <mat-icon>favorite_border </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="editbutton" (click)="open(edit)">
-                <mat-icon>drive_file_rename_outline </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="deletebutton" (click)="onDelete(user.id)">
-                <mat-icon>delete_forever </mat-icon>
-              </button>
-            </div>
-          </td>
-  
-        </li>
-        </div>
-        <div class="column">
-          <li id="{{ contacts.id }}" class="oneuser">
-            <div class="profileimage">
-              <img [src]="image" class="image">
-            </div>
-              <h3 class="usertitle">{{ contacts.name }}</h3>
-              <div class="infofield">
-                <div>
-                  <mat-icon class="icon">email </mat-icon>
-                </div>
-                <div class="icon-label">: {{ contacts.email }}</div>
-              </div>
-         
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">phone_enabled </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.phone }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">language </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.website }}</div>
-            </div>
-          </td>
-  
-          <td>
-            <div class="matcardact">
-              <button mat-icon-button class="favoritebutton">
-                <mat-icon>favorite_border </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="editbutton" (click)="open(edit)">
-                <mat-icon>drive_file_rename_outline </mat-icon>
-              </button>
-    
-              <button mat-icon-button class="deletebutton" (click)="onDelete(contacts)">
-                <mat-icon>delete_forever </mat-icon>
-              </button>
-            </div>
-          </td>
-  
-        </li>
-        </div>
-      </div>
-
-
-       <tr *ngFor = "let contacts of contactList">
-        <li id="{{ contacts.id }}" class="oneuser">
-          <div class="profileimage">
-            <img [src]="image" class="image">
-          </div>
-            <h3 class="usertitle">{{ contacts.name }}</h3>
-            <div class="infofield">
-              <div>
-                <mat-icon class="icon">email </mat-icon>
-              </div>
-              <div class="icon-label">: {{ contacts.email }}</div>
-            </div>
-       
-        <td>
-          <div class="infofield">
-            <div>
-              <mat-icon class="icon">phone_enabled </mat-icon>
-            </div>
-            <div class="icon-label">: {{ contacts.phone }}</div>
-          </div>
-        </td>
-
-        <td>
-          <div class="infofield">
-            <div>
-              <mat-icon class="icon">language </mat-icon>
-            </div>
-            <div class="icon-label">: {{ contacts.website }}</div>
-          </div>
-        </td>
-
-        <td>
-          <div class="matcardact">
-            <button mat-icon-button class="favoritebutton">
-              <mat-icon>favorite_border </mat-icon>
-            </button>
-  
-            <button mat-icon-button class="editbutton" (click)="open(edit)">
-              <mat-icon>drive_file_rename_outline </mat-icon>
-            </button>
-  
-            <button mat-icon-button class="deletebutton"(click)="onDelete(contacts)">
-              <mat-icon>delete_forever </mat-icon>
-            </button>
-          </div>
-        </td>
-
-      </li>
-      </tr>
-
-    </thead>
-  </table>
-
-</div> -->
-
-
-
-
 <div class="users-group">
   <ul>
     <div *ngFor="let contacts of contactList" class="user">
@@ -263,10 +48,6 @@
             </button>
           </ng-template>  
 
-
-
-         
-
           <button mat-icon-button class="editbutton" (click)="open(edit)">
             <mat-icon>drive_file_rename_outline </mat-icon>
           </button>
@@ -294,27 +75,27 @@
         <div class="form-group">
           <div>
             <label for="name">Name :</label>
-            <input type="text" placeholder="Enter your name here" ngModel name="name">
+            <input type="text" class="form-control" placeholder="Enter your name here" [ngModel name="name">
           </div>
           <br/>
           <div>
             <label for="email">Email : </label>
-            <input type="text" placeholder="Enter your email here" ngModel="email">
+            <input type="text" class="form-control"  placeholder="Enter your email here" [ngModel] name="email">
           </div>
           <br/>
           <div>
             <label for="phone">Phone : </label>
-            <input type="text" placeholder="Enter your phone-number here" ngModel="phone">
+            <input type="text" class="form-control"  placeholder="Enter your phone-number here" [ngModel] name="phone">
           </div>
           <br/>
           <div>
             <label for="company">Company :</label>
-            <input type="text" placeholder="Enter your company name here" ngModel="company">
+            <input type="text" class="form-control"  placeholder="Enter your company name here" [ngModel] name="company">
           </div>
           <br/>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" style="color: blue;" (click)="modal.close('Save click')">Submit</button>
+          <button type="submit" class="btn btn-outline-dark" style="color: blue;">Save</button>
         </div>
       </form>
     </div>
@@ -336,22 +117,22 @@
         <div class="form-group">
           <div>
             <label for="name">Name :</label>
-            <input type="text" placeholder="Enter your name here">
+            <input type="text" class="form-control" placeholder="Enter your name here">
           </div>
           <br/>
           <div>
             <label for="email">Email : </label>
-            <input type="text" placeholder="Enter your email here">
+            <input type="text" class="form-control" placeholder="Enter your email here">
           </div>
           <br/>
           <div>
             <label for="phone">Phone : </label>
-            <input type="text" placeholder="Enter your phone-number here">
+            <input type="text" class="form-control" placeholder="Enter your phone-number here">
           </div>
           <br/>
           <div>
             <label for="company">Company :</label>
-            <input type="text" placeholder="Enter your company name here">
+            <input type="text" class="form-control" placeholder="Enter your company name here">
           </div>
           <br/>
         </div>
@@ -359,6 +140,6 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" style="color: blue;" (click)="modal.close('Save click')">Submit</button>
+      <button type="button" class="btn btn-outline-dark" style="color: blue;" (click)="modal.close('Save click')">Update Contact</button>
     </div>
   </ng-template>

@@ -32,6 +32,10 @@ contactList: User[] = [];
     return this.httpClient.post<User[]>(this.url, user);
   }
 
+  onGetEmployee(id: number){
+    return this.contactList.find(x => x.id ===id);
+  }
+
   updateContact(user: any): Observable<any>{
     return this.httpClient.put<User[]>(this.url, user);
   }

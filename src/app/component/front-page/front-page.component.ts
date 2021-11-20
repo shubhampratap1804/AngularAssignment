@@ -3,6 +3,7 @@ import { AddDetailService } from 'src/app/service/add-detail.service';
 import { ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/Model/users';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FrontPageComponent implements OnInit {
   
 like: boolean = false;
+id: number;
 
   images:any = [
     'assets/images/1.png',
@@ -44,7 +46,8 @@ like: boolean = false;
 
 
   ngOnInit( ) {
-  this.userService.getContacts().subscribe((Response: any) => {console.log(Response)
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getContacts().subscribe((Response: any) => {console.log(Response)
     this.contactList = Response;
     console.log("Showing all Contacts", this.contactList);
 
@@ -59,7 +62,11 @@ like: boolean = false;
       }
     });
     console.log("User initiated", this.contactList)
+    if(this.id != 0){
+      this.contact = this.userService.onGetEmployee(this.id)
+    }
   });
+
   }
 
 onLike(user: any){
@@ -76,7 +83,14 @@ onLike(user: any){
 }
 
   onSubmit(form: NgForm){
-    console.log(form.value);
+    let contact : any = {
+      name: form.value.name,
+      email: form.value.email,
+      phone: form.value.phone,
+      company: form.value.company,
+    }
+
+    this.userService.addContact(contact);
   }
 
   onAdd(){
@@ -90,7 +104,6 @@ onLike(user: any){
 
 
   onDelete(user: any) {
-    console.log('user id deleting: ', user);
     const index = this.contactList.indexOf(user);
     if (index > -1) {
       this.contactList.splice(index, 1);
@@ -98,11 +111,6 @@ onLike(user: any){
     console.log('Contact Deleted', this.contactList);
   }
 
-
-  // onDelete(id: number){
-  //   this.userService.deleteContacts(id).subscribe(userService=>console.log("delete successful"));
-  //   window.location.reload(); 
-  // }
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
